@@ -18,6 +18,8 @@ export const QueuePage: React.FC = () => {
   const [queueState, setQueueState] = useState<TQueueState<typeof input>[]>([]);
   const [input, setInput] = useState("");
   const [isLoad, setIsLoad] = useState(false);
+  const [addLoader, setAddLoader] = useState(false);
+  const [deleteOneValueLoader, setDeleteOneValueLoader] = useState(false);
 
   const onChangeInput = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setInput(evt.target.value);
@@ -49,6 +51,9 @@ export const QueuePage: React.FC = () => {
       queueState[queueState.length - 1].item === ""
     )
       return;
+
+    setAddLoader(true);
+
     setIsLoad(true);
     const queueStateCopy = [...queueState];
     queueStateCopy[queue.current.getTailIndex()].color = ElementStates.Changing;
@@ -59,6 +64,8 @@ export const QueuePage: React.FC = () => {
       setQueueState([...queueStateCopy]);
       setInput("");
       setIsLoad(false);
+
+      setAddLoader(false);
     }, SHORT_DELAY_IN_MS);
     setTimeout(() => {
       queueStateCopy[queue.current.getTailIndex() - 1].color =
@@ -69,6 +76,7 @@ export const QueuePage: React.FC = () => {
 
   const deleteOneValue = () => {
     setIsLoad(true);
+    setDeleteOneValueLoader(true);
     const queueStateCopy = [...queueState];
     queueStateCopy[queue.current.getHeadIndex()].color = ElementStates.Changing;
     setQueueState([...queueStateCopy]);
@@ -81,12 +89,14 @@ export const QueuePage: React.FC = () => {
         setQueueState([...queueStateCopy]);
         queue.current.dequeue();
         setIsLoad(false);
+        setDeleteOneValueLoader(false);
       }, SHORT_DELAY_IN_MS);
     } else {
       setTimeout(() => {
         queue.current.dequeue();
         setQueueState([...setState()]);
         setIsLoad(false);
+        setDeleteOneValueLoader(false);
       }, SHORT_DELAY_IN_MS);
     }
   };
@@ -110,12 +120,14 @@ export const QueuePage: React.FC = () => {
             type="submit"
             text="Добавить"
             disabled={input.length <= 0 || isLoad}
+            isLoader={addLoader}
           />
           <Button
             type="button"
             text="Удалить"
             onClick={deleteOneValue}
             disabled={queue.current.getLength() <= 0 || isLoad}
+            isLoader={deleteOneValueLoader}
           />
           <div className={style.separate}>
             <Button

@@ -74,7 +74,12 @@ export const StringComponent: React.FC = () => {
             value={input}
             onChange={onChangeInput}
           />
-          <Button type="submit" text="Развернуть" isLoader={loader} />
+          <Button
+            type="submit"
+            text="Развернуть"
+            isLoader={loader}
+            disabled={!input.length}
+          />
         </form>
         <div className={style.letterList}>
           {stringArr?.map((item, index) => (
