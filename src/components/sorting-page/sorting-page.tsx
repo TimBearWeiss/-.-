@@ -6,8 +6,7 @@ import { Column } from "../ui/column/column";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import { ElementStates } from "../../types/element-states";
 import { Direction } from "../../types/direction";
-import { makeRandomArr } from "./sorting";
-import { SHORT_DELAY_IN_MS } from "../../constants/delays";
+import { makeRandomArr, selectionSort, bubbleSort } from "./sorting";
 
 type TArray = {
   value: number;
@@ -36,82 +35,62 @@ export const SortingPage: React.FC = () => {
 
   const handleClick = (direction: Direction) => {
     if (sortWay === "bubble") {
-      bubbleSort(Array, direction);
+      bubbleSort(
+        Array,
+        direction,
+        setIsLoadDesc,
+        setIsLoadAsc,
+        setIsDisabledButton,
+        setArray
+      );
     }
     if (sortWay === "choose") {
-      selectionSort(Array, direction);
+      selectionSort(
+        Array,
+        direction,
+        setIsLoadDesc,
+        setIsLoadAsc,
+        setIsDisabledButton,
+        setArray
+      );
     }
   };
 
-  const bubbleSort = async (array: TArray[], direction: Direction) => {
-    direction === Direction.Descending
-      ? setIsLoadDesc(true)
-      : setIsLoadAsc(true);
-    setIsDisabledButton(true);
-    for (let i = 0; i < array.length; i++) {
-      for (let j = 0; j < array.length - i - 1; j++) {
-        array[j].color = ElementStates.Changing;
-        array[j + 1].color = ElementStates.Changing;
-        setArray([...array]);
-        await new Promise((resolve) => setTimeout(resolve, SHORT_DELAY_IN_MS));
-        if (direction === Direction.Descending) {
-          if (array[j].value < array[j + 1].value) {
-            [array[j].value, array[j + 1].value] = [
-              array[j + 1].value,
-              array[j].value,
-            ];
-          }
-        } else if (direction === Direction.Ascending) {
-          if (array[j].value > array[j + 1].value) {
-            [array[j].value, array[j + 1].value] = [
-              array[j + 1].value,
-              array[j].value,
-            ];
-          }
-        }
-        array[j].color = ElementStates.Default;
-      }
-      array[array.length - i - 1].color = ElementStates.Modified;
-    }
-    setIsDisabledButton(false);
-    direction === Direction.Descending
-      ? setIsLoadDesc(false)
-      : setIsLoadAsc(false);
-  };
-
-  const selectionSort = async (array: TArray[], direction: Direction) => {
-    direction === Direction.Descending
-      ? setIsLoadDesc(true)
-      : setIsLoadAsc(true);
-    setIsDisabledButton(true);
-    for (let i = 0; i < array.length - 1; i++) {
-      let ind = i;
-      for (let j = i + 1; j < array.length; j++) {
-        array[i].color = ElementStates.Changing;
-        array[j].color = ElementStates.Changing;
-        setArray([...array]);
-        await new Promise((resolve) => setTimeout(resolve, SHORT_DELAY_IN_MS));
-        if (direction === Direction.Descending) {
-          if (array[j].value > array[ind].value) {
-            ind = j;
-          }
-        } else if (direction === Direction.Ascending) {
-          if (array[j].value < array[ind].value) {
-            ind = j;
-          }
-        }
-        array[j].color = ElementStates.Default;
-        setArray([...array]);
-      }
-      [array[i].value, array[ind].value] = [array[ind].value, array[i].value];
-      array[i].color = ElementStates.Modified;
-    }
-    array[array.length - 1].color = ElementStates.Modified;
-    setIsDisabledButton(false);
-    direction === Direction.Descending
-      ? setIsLoadDesc(false)
-      : setIsLoadAsc(false);
-  };
+  // const bubbleSort = async (array: TArray[], direction: Direction) => {
+  //   direction === Direction.Descending
+  //     ? setIsLoadDesc(true)
+  //     : setIsLoadAsc(true);
+  //   setIsDisabledButton(true);
+  //   for (let i = 0; i < array.length; i++) {
+  //     for (let j = 0; j < array.length - i - 1; j++) {
+  //       array[j].color = ElementStates.Changing;
+  //       array[j + 1].color = ElementStates.Changing;
+  //       setArray([...array]);
+  //       await new Promise((resolve) => setTimeout(resolve, SHORT_DELAY_IN_MS));
+  //       if (direction === Direction.Descending) {
+  //         if (array[j].value < array[j + 1].value) {
+  //           [array[j].value, array[j + 1].value] = [
+  //             array[j + 1].value,
+  //             array[j].value,
+  //           ];
+  //         }
+  //       } else if (direction === Direction.Ascending) {
+  //         if (array[j].value > array[j + 1].value) {
+  //           [array[j].value, array[j + 1].value] = [
+  //             array[j + 1].value,
+  //             array[j].value,
+  //           ];
+  //         }
+  //       }
+  //       array[j].color = ElementStates.Default;
+  //     }
+  //     array[array.length - i - 1].color = ElementStates.Modified;
+  //   }
+  //   setIsDisabledButton(false);
+  //   direction === Direction.Descending
+  //     ? setIsLoadDesc(false)
+  //     : setIsLoadAsc(false);
+  // };
 
   return (
     <SolutionLayout title="Сортировка массива">
