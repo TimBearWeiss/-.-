@@ -335,10 +335,14 @@ export const ListPage: React.FC = () => {
             />
           </div>
         </form>
-        <ul className={style.list}>
+        <ul className={style.list} data-testid="circles">
           {listArray.map((item, index) => {
             return (
-              <li className={style.element} key={index}>
+              <li
+                className={style.element}
+                key={index}
+                data-testid="circleitem"
+              >
                 {item.shiftElement && (
                   <Circle
                     extraClass={`${style.smallCircle} ${

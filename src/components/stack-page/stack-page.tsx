@@ -85,6 +85,7 @@ export const StackPage: React.FC = () => {
           />
           <Button
             type={"button"}
+            data-testid="button-delete"
             text="Удалить"
             isLoader={controls.delete}
             disabled={array.length === 0 || controls.add || controls.clear}

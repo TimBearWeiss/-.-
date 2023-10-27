@@ -56,42 +56,6 @@ export const SortingPage: React.FC = () => {
     }
   };
 
-  // const bubbleSort = async (array: TArray[], direction: Direction) => {
-  //   direction === Direction.Descending
-  //     ? setIsLoadDesc(true)
-  //     : setIsLoadAsc(true);
-  //   setIsDisabledButton(true);
-  //   for (let i = 0; i < array.length; i++) {
-  //     for (let j = 0; j < array.length - i - 1; j++) {
-  //       array[j].color = ElementStates.Changing;
-  //       array[j + 1].color = ElementStates.Changing;
-  //       setArray([...array]);
-  //       await new Promise((resolve) => setTimeout(resolve, SHORT_DELAY_IN_MS));
-  //       if (direction === Direction.Descending) {
-  //         if (array[j].value < array[j + 1].value) {
-  //           [array[j].value, array[j + 1].value] = [
-  //             array[j + 1].value,
-  //             array[j].value,
-  //           ];
-  //         }
-  //       } else if (direction === Direction.Ascending) {
-  //         if (array[j].value > array[j + 1].value) {
-  //           [array[j].value, array[j + 1].value] = [
-  //             array[j + 1].value,
-  //             array[j].value,
-  //           ];
-  //         }
-  //       }
-  //       array[j].color = ElementStates.Default;
-  //     }
-  //     array[array.length - i - 1].color = ElementStates.Modified;
-  //   }
-  //   setIsDisabledButton(false);
-  //   direction === Direction.Descending
-  //     ? setIsLoadDesc(false)
-  //     : setIsLoadAsc(false);
-  // };
-
   return (
     <SolutionLayout title="Сортировка массива">
       <div className={style.main}>

@@ -3,22 +3,28 @@
 exports[`test uiCircle type of condition changing 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   changing"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -26,22 +32,28 @@ exports[`test uiCircle type of condition changing 1`] = `
 exports[`test uiCircle type of condition default 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -49,22 +61,28 @@ exports[`test uiCircle type of condition default 1`] = `
 exports[`test uiCircle type of condition modified 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   modified"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -72,24 +90,30 @@ exports[`test uiCircle type of condition modified 1`] = `
 exports[`test uiCircle with head 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head string"
+    data-testid="circle-head"
   >
     head
   </div>
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -97,24 +121,30 @@ exports[`test uiCircle with head 1`] = `
 exports[`test uiCircle with letters 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     >
       H
     </p>
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -122,22 +152,28 @@ exports[`test uiCircle with letters 1`] = `
 exports[`test uiCircle with props isSmall={true} 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle  small default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -145,9 +181,11 @@ exports[`test uiCircle with props isSmall={true} 1`] = `
 exports[`test uiCircle with react-element in head 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   >
     <h1>
       test header
@@ -155,16 +193,20 @@ exports[`test uiCircle with react-element in head 1`] = `
   </div>
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
@@ -172,22 +214,28 @@ exports[`test uiCircle with react-element in head 1`] = `
 exports[`test uiCircle with react-element in tail 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   >
     <h1>
       test tail
@@ -199,22 +247,28 @@ exports[`test uiCircle with react-element in tail 1`] = `
 exports[`test uiCircle with tail 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 string"
+    data-testid="circle-tail"
   >
     tail
   </div>
@@ -224,22 +278,28 @@ exports[`test uiCircle with tail 1`] = `
 exports[`test uiCircle without letters 1`] = `
 <div
   className="content "
+  data-testid="contetnt"
 >
   <div
     className="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="circle-head"
   />
   <div
     className="circle   default"
+    data-testid="circle"
   >
     <p
       className="text text_type_circle text_color_input letter"
+      data-testid="circle-letter"
     />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="circle-index"
   />
   <div
     className="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="circle-tail"
   />
 </div>
 `;
