@@ -1,6 +1,8 @@
+import { testUrl, currentСircle, submitButton } from "./utils";
+
 describe("Fibonacci test", () => {
   beforeEach(() => {
-    cy.visit(`http://localhost:3000/fibonacci`);
+    cy.visit(`${testUrl}/fibonacci`);
   });
 
   it("if input empty, button disabled", () => {
@@ -13,9 +15,9 @@ describe("Fibonacci test", () => {
     const fibonacciArr = [1, 1, 2, 3, 5, 8];
 
     cy.get("input").type(inputValue);
-    cy.get("button[type='submit']").click();
+    cy.get(submitButton).click();
     for (let j = 0; j <= inputValue; j++) {
-      cy.get("[data-testid=circle]").each(($el, index) => {
+      cy.get(currentСircle).each(($el, index) => {
         cy.get($el).contains(fibonacciArr[index]);
       });
       cy.wait(500);

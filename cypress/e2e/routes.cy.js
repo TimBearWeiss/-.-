@@ -1,6 +1,8 @@
+import { testUrl } from "./utils";
+
 describe("Routing works correctly", () => {
   beforeEach(function () {
-    cy.visit("http://localhost:3000");
+    cy.visit(testUrl);
   });
 
   it("The default home page has opened", () => {

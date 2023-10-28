@@ -1,11 +1,13 @@
+import { testUrl, currentСircle, submitButton } from "./utils";
+
 describe("correct operation of the line reversal", () => {
   beforeEach(() => {
-    cy.visit(`http://localhost:3000/recursion`);
+    cy.visit(`${testUrl}/recursion`);
   });
 
   it("if input empty, button disabled", () => {
     cy.get("input").should("be.empty");
-    cy.get("button[type=submit]").should("be.disabled");
+    cy.get(submitButton).should("be.disabled");
   });
 
   it("the line unfolds correctly", () => {
@@ -38,9 +40,9 @@ describe("correct operation of the line reversal", () => {
       "rgb(127, 224, 81)",
     ];
     cy.get("input").type(initialString);
-    cy.get("button[type='submit']").click();
+    cy.get(submitButton).click();
 
-    cy.get("[data-testid=circle]").each(($el, index, $list) => {
+    cy.get(currentСircle).each(($el, index, $list) => {
       cy.get($list).should("have.length", countOfCharacters);
       cy.get($el).contains(initialString[index]);
       cy.get($el).should("have.css", "border-color", stepOne[index]);
@@ -48,7 +50,7 @@ describe("correct operation of the line reversal", () => {
 
     cy.wait(500);
 
-    cy.get("[data-testid=circle]").each(($el, index, $list) => {
+    cy.get(currentСircle).each(($el, index, $list) => {
       cy.get($list).should("have.length", countOfCharacters);
       cy.get($el).contains(stepTwoString[index]);
       cy.get($el).should("have.css", "border-color", stepTwo[index]);
@@ -56,7 +58,7 @@ describe("correct operation of the line reversal", () => {
 
     cy.wait(500);
 
-    cy.get("[data-testid=circle]").each(($el, index, $list) => {
+    cy.get(currentСircle).each(($el, index, $list) => {
       cy.get($list).should("have.length", countOfCharacters);
       cy.get($el).contains(endString[index]);
       cy.get($el).should("have.css", "border-color", stepThree[index]);
